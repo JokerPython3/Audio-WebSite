@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Download Result</title>
+    <link rel="stylesheet" href="/kw.css" />
+</head>
+<body>
+    <!-- return ksj-->
+    <div class="container">
+        <% if (success) { %>
+            <h2>Download Successful</h2>
+            <p>Song file: <strong><%= fileName %></strong></p>
+            <audio controls class="audio-player">
+                <source src="/downloads/<%= fileName %>" type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
+            <br />
+            <a href="/downloads/<%= fileName %>" download class="download-btn">Download Song</a>
+        <% } else { %>
+            <h2>Error Occurred</h2>
+            <p><%= error || "Unknown error happened." %></p>
+        <% } %>
+    </div>
+    <script src="/t.js"></script>
+</body>
+</html>
