@@ -1,4 +1,4 @@
-
+const PORT = process.env.PORT || 3000;
 const express = require('express');
 const app = express();
 const { spawn } = require("child_process");
@@ -39,6 +39,6 @@ app.post('/dow', (req, res) => {
 });
 // // if(ksj == "black"){
 //    return "عير"}
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("server is running in port 3000");
 });
